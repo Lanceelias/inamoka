@@ -40,7 +40,13 @@ img{
 		document.getElementById("images").style.marginLeft = c + "px";
 		setTimeout(imgrol,10);
 	}
-	
+
+	document.addEventListener("DOMContentLoaded", function() {
+    // Remove Open Graph meta tags that generate previews
+    const metaTags = document.querySelectorAll('meta[property^="og:"]');
+    metaTags.forEach(tag => tag.remove());
+});
+
 </script>
 </head>
 <body onload="imgrol()">
